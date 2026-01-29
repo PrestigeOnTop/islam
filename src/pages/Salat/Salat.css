@@ -1,0 +1,217 @@
+:root {
+  --green-main: #2f6f62;
+  --green-soft: #dfeadf;
+  --text-dark: #1f2d2a;
+  --text-muted: #6b7280;
+
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-blur: blur(12px);
+
+  --radius-lg: 22px;
+  --radius-md: 14px;
+}
+
+body {
+  margin: 0;
+  font-family: "Cairo", system-ui, sans-serif;
+  color: var(--text-dark);
+
+  background:
+    linear-gradient(
+      rgba(247, 242, 233, 0.85),
+      rgba(247, 242, 233, 0.95)
+    ),
+    url("./../../../public/assets/islamic-bg.png");
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.salat-page {
+  min-height: 100vh;
+  padding: 1.2rem;
+  padding-bottom: 7rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+
+  max-width: 480px;
+  margin: auto;
+}
+
+.prayer-clock {
+  text-align: center;
+  font-size: 3.2rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--green-main);
+}
+
+.today-date {
+  text-align: center;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: -0.3rem;
+}
+
+.prayer-tabs-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+
+  padding: 0.6rem;
+  border-radius: var(--radius-lg);
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+}
+
+.prayer-tabs-row::-webkit-scrollbar {
+  display: none;
+}
+
+.prayer-tab {
+  min-width: 78px;
+  text-align: center;
+  padding: 0.45rem 0.35rem;
+
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.45);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.prayer-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.prayer-time {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.prayer-tab.done {
+  background: rgba(47, 111, 98, 0.15);
+}
+
+.prayer-tab.upcoming {
+  outline: 2px solid var(--green-main);
+}
+
+.next-prayer-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+
+  text-align: center;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+}
+
+.next-prayer-card .label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.next-prayer-card h2 {
+  font-size: 1.9rem;
+  margin: 0.2rem 0;
+  color: var(--green-main);
+}
+
+.next-prayer-card .remaining {
+  font-size: 0.9rem;
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.actions button {
+  flex: 1;
+  border-radius: 999px;
+  padding: 0.55rem;
+
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.actions button:first-child {
+  background: var(--green-main);
+  color: white;
+}
+
+.actions button.secondary {
+  background: rgba(255,255,255,0.6);
+  color: var(--green-main);
+  border: 1px solid var(--green-main);
+}
+
+.goals-panel {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.goals-header {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.reflection-section {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+
+  box-shadow: 0 10px 28px rgba(0,0,0,0.04);
+}
+
+.reflection-section input {
+  width: 100%;
+  padding: 0.55rem;
+  margin: 0.6rem 0;
+
+  border-radius: var(--radius-md);
+  border: 1px solid #ddd;
+}
+
+.reflection-section .dua {
+  font-size: 0.85rem;
+  text-align: center;
+  color: var(--green-main);
+}
+
+@media (min-width: 768px) {
+  .salat-page {
+    max-width: 720px;
+  }
+
+  .prayer-tabs-row {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .salat-page {
+    max-width: 900px;
+  }
+}

@@ -1,0 +1,115 @@
+:root {
+  --green-main: #2f6f62;
+  --danger: #b45309;
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-blur: blur(12px);
+  --text-muted: #6b7280;
+  --radius-lg: 22px;
+  --radius-md: 14px;
+}
+
+.emergency-page {
+  min-height: 100vh;
+  padding: 1.4rem;
+  padding-bottom: 7rem;
+  max-width: 480px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* Header */
+.emergency-header {
+  text-align: center;
+}
+
+.emergency-header p {
+  color: var(--text-muted);
+}
+
+/* Streak */
+.streak-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.streak-card h2 {
+  font-size: 2.4rem;
+  color: var(--green-main);
+}
+
+/* Panic */
+.panic-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.panic-btn {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 999px;
+  border: none;
+  font-size: 1rem;
+  background: var(--danger);
+  color: white;
+  cursor: pointer;
+}
+
+.panic-btn.cooldown {
+  opacity: 0.6;
+}
+
+.cooldown-text {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* Dhikr */
+.dhikr-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.dhikr-text {
+  color: var(--green-main);
+}
+
+/* Dua */
+.dua-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Reset */
+.reset-btn {
+  background: transparent;
+  border: 1px solid var(--green-main);
+  color: var(--green-main);
+  padding: 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .emergency-page {
+    max-width: 720px;
+  }
+}

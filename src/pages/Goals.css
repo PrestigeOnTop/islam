@@ -1,0 +1,108 @@
+:root {
+  --green-main: #2f6f62;
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-blur: blur(12px);
+  --text-muted: #6b7280;
+  --radius-lg: 22px;
+  --radius-md: 14px;
+}
+
+.goals-page {
+  min-height: 100vh;
+  padding: 1.4rem;
+  padding-bottom: 7rem;
+  max-width: 480px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* Header */
+.goals-header {
+  text-align: center;
+}
+
+.goals-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Goals List */
+.goals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.goal-item {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-md);
+  padding: 0.7rem 0.8rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-shadow: 0 8px 26px rgba(0,0,0,0.06);
+}
+
+.goal-item label {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.goal-item.done span {
+  text-decoration: line-through;
+  color: var(--text-muted);
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Add Goal */
+.add-goal {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add-goal input {
+  flex: 1;
+  padding: 0.55rem;
+  border-radius: var(--radius-md);
+  border: 1px solid #ddd;
+}
+
+.add-goal button {
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--green-main);
+  color: white;
+  cursor: pointer;
+}
+
+/* Footer Dua */
+.goals-dua {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--green-main);
+  margin-top: 0.6rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .goals-page {
+    max-width: 720px;
+  }
+}

@@ -1,0 +1,121 @@
+:root {
+  --green-main: #2f6f62;
+  --glass-bg: rgba(255, 255, 255, 0.55);
+  --glass-blur: blur(12px);
+  --text-muted: #6b7280;
+  --radius-lg: 22px;
+  --radius-md: 14px;
+}
+
+.dhikr-page {
+  min-height: 100vh;
+  padding: 1.4rem;
+  padding-bottom: 7rem;
+  max-width: 480px;
+  margin: auto;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+/* Header */
+.dhikr-header {
+  text-align: center;
+}
+
+.dhikr-header h1 {
+  margin-bottom: 0.2rem;
+}
+
+.dhikr-header p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Main Card */
+.dhikr-card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border-radius: var(--radius-lg);
+
+  padding: 1.6rem 1rem;
+  text-align: center;
+
+  box-shadow: 0 14px 40px rgba(0,0,0,0.08);
+}
+
+.dhikr-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--green-main);
+}
+
+.dhikr-counter {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Buttons */
+.dhikr-btn {
+  width: 100%;
+  background: var(--green-main);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.7rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 0.6rem;
+}
+
+.dhikr-reset {
+  width: 100%;
+  background: transparent;
+  color: var(--green-main);
+  border: 1px solid var(--green-main);
+  border-radius: 999px;
+  padding: 0.55rem;
+  cursor: pointer;
+}
+
+/* Dhikr List */
+.dhikr-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dhikr-item {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+
+  border-radius: var(--radius-md);
+  padding: 0.6rem;
+
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.dhikr-item.active {
+  background: rgba(47, 111, 98, 0.15);
+  font-weight: 600;
+}
+
+/* Footer Dua */
+.dhikr-dua {
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--green-main);
+  margin-top: 1rem;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .dhikr-page {
+    max-width: 720px;
+  }
+}

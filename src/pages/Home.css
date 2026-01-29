@@ -1,0 +1,92 @@
+.home {
+  min-height: 100vh;
+  background-image: url("/assets/islamic-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(4px);
+  padding: 2rem 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+}
+
+.basmala {
+  font-size: 2.2rem;
+  color: #1f2d2a;
+  margin-bottom: 0.5rem;
+}
+
+.niyyah {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.ayah-card {
+  background: #dfeadf;
+  border-radius: 14px;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+.ayah {
+  font-size: 1.2rem;
+  color: #1f2d2a;
+  margin-bottom: 0.3rem;
+}
+
+.ayah-ref {
+  font-size: 0.85rem;
+  color: #4b5563;
+}
+
+.encouragement {
+  font-size: 0.95rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.primary-btn {
+  background: #2f6f62;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+@media (min-width: 768px) {
+  .overlay {
+    max-width: 520px;
+    padding: 3rem;
+  }
+
+  .basmala {
+    font-size: 2.8rem;
+  }
+
+  .ayah {
+    font-size: 1.35rem;
+  }
+
+  .primary-btn {
+    font-size: 1.05rem;
+    padding: 0.85rem 2.5rem;
+  }
+}
