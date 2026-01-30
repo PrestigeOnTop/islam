@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Salat from "./pages/Salat/Salat";
+import Salat from "./pages/Salat/Salat.jsx";
 import Dhikr from "./pages/Dhikr";
 import Goals from "./pages/Goals";
 import Emergency from "./pages/Emergency";
