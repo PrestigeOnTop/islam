@@ -1,5 +1,4 @@
 import "./Salat.css";
-import "./Salat.js"
 import PrayerClock from "./TimeSection/PrayerClock";
 import TodayDate from "./TimeSection/TodayDate";
 import PrayerTabsRow from "./PrayerTabsRow/PrayerTabsRow";
