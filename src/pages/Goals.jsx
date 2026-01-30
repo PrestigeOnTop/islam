@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./Goals.css";
 
 const DEFAULT_GOALS = [
@@ -8,29 +8,55 @@ const DEFAULT_GOALS = [
   { id: 4, text: "قراءة صفحة قرآن يوميًا", done: false },
 ];
 
+const STORAGE_KEY = "islamic_goals";
+
 export default function Goals() {
-  const [goals, setGoals] = useState(DEFAULT_GOALS);
-  const [newGoal, setNewGoal] = useState("");
+  const [goals, setGoals] = useState([]);
+
+  // 🔹 Load goals once
+  useEffect(() => {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) {
+      setGoals(JSON.parse(saved));
+    } else {
+      setGoals(DEFAULT_GOALS);
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(DEFAULT_GOALS)
+      );
+    }
+  }, []);
+
+  // 🔹 Save goals on change
+  useEffect(() => {
+    if (goals.length) {
+      localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(goals)
+      );
+    }
+  }, [goals]);
 
   const toggleGoal = (id) => {
-    setGoals(
-      goals.map((g) =>
+    setGoals((prev) =>
+      prev.map((g) =>
         g.id === id ? { ...g, done: !g.done } : g
       )
     );
   };
 
-  const addGoal = () => {
-    if (!newGoal.trim()) return;
-    setGoals([
-      ...goals,
-      { id: Date.now(), text: newGoal, done: false },
+  const addGoal = (text) => {
+    if (!text.trim()) return;
+    setGoals((prev) => [
+      ...prev,
+      { id: Date.now(), text, done: false },
     ]);
-    setNewGoal("");
   };
 
   const deleteGoal = (id) => {
-    setGoals(goals.filter((g) => g.id !== id));
+    setGoals((prev) =>
+      prev.filter((g) => g.id !== id)
+    );
   };
 
   return (
@@ -70,20 +96,34 @@ export default function Goals() {
       </div>
 
       {/* Add Goal */}
-      <div className="add-goal">
-        <input
-          type="text"
-          placeholder="أضف هدفًا جديدًا…"
-          value={newGoal}
-          onChange={(e) => setNewGoal(e.target.value)}
-        />
-        <button onClick={addGoal}>إضافة</button>
-      </div>
+      <AddGoal onAdd={addGoal} />
 
-      {/* Footer Reminder */}
+      {/* Footer */}
       <div className="goals-dua">
         اللهم أعنّي على تحقيق ما يُرضيك 🤍
       </div>
+    </div>
+  );
+}
+
+/* 🔸 Component صغير للإضافة */
+function AddGoal({ onAdd }) {
+  const [value, setValue] = useState("");
+
+  const submit = () => {
+    onAdd(value);
+    setValue("");
+  };
+
+  return (
+    <div className="add-goal">
+      <input
+        type="text"
+        placeholder="أضف هدفًا جديدًا…"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+      />
+      <button onClick={submit}>إضافة</button>
     </div>
   );
 }

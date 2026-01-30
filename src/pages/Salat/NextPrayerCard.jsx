@@ -1,4 +1,4 @@
-import { getTodayPrayerTimes, formatTime } from "../../utils/prayerTimes";
+import { getTodayPrayerTimes, formatTime } from "../../utils/prayerTimes.js";
 
 function getNextPrayer() {
   const now = new Date();

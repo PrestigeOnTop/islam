@@ -5,12 +5,15 @@ import {
   Madhab
 } from "adhan";
 
-// إحداثيات سلا – المغرب
+// إحداثيات مدينة سلا – المغرب
 const coordinates = new Coordinates(34.0531, -6.7985);
 
 export function getTodayPrayerTimes(date = new Date()) {
-  const params = CalculationMethod.Morocco();
-  params.madhab = Madhab.Maliki;
+  // الطريقة الأقرب للمغرب
+  const params = CalculationMethod.MuslimWorldLeague();
+
+  // المالكي = Shafi في الحساب
+  params.madhab = Madhab.Shafi;
 
   const prayerTimes = new PrayerTimes(coordinates, date, params);
 

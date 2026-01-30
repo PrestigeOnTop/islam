@@ -1,5 +1,5 @@
 import PrayerTab from "./PrayerTab";
-import { getTodayPrayerTimes, formatTime } from "../../../utils/prayerTimes";
+import { getTodayPrayerTimes, formatTime } from "../../../utils/prayerTimes.js";
 
 export default function PrayerTabsRow() {
   const times = getTodayPrayerTimes();
